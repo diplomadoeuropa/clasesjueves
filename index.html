@@ -37,25 +37,35 @@
 	</style>
 </head>
 <body>
-	<header style=" height: 38px;">
+
+
+	<header  id="header1" style=" height: 38px;">
 		<h1 class="titulo">Diplomado en Marketing Empático, Personal y Social</h1>
 	</header>
 
 	<main>
 		<div class="contenedor">
+		<article style=" height: 400px;">
+				<h2>Clase 08/07/2021</h2>
+<iframe id="iframe3" style="width: 100%; height: 90%;"  frameborder="0" src="https://mega.nz/embed/AbhlTAIA#REi-4-oeOqQORWzFxAzA3cerZysN8kH8uUOFA_huXVQ" allowfullscreen ></iframe>
+			</article>
+			
 					<article style=" height: 400px;">
 				<h2>Clase 02/07/2021</h2>
-<iframe id="iframe1" style="width: 100%; height: 90%;"  frameborder="0" src="https://mega.nz/embed/wKxHlICI#9vDIHo52T5awPPQ2iePxUxzhQxupObZSUlpd7igNwx8" allowfullscreen ></iframe>
+<iframe id="iframe2" style="width: 100%; height: 90%;"  frameborder="0" src="https://mega.nz/embed/wKxHlICI#9vDIHo52T5awPPQ2iePxUxzhQxupObZSUlpd7igNwx8" allowfullscreen ></iframe>
 			</article>
 			
 			<article style=" height: 400px;">
 				<h2>Clase 01/07/2021</h2>
-<iframe style="width: 100%; height: 90%;" frameborder="0" src="https://mega.nz/embed/UDhUnK6Y#6JjHSOooVpK8ZnXwx2xXGsGmDDf4-rfN1vX3tcrYMeE" allowfullscreen ></iframe>
+<iframe id="iframe1" style="width: 100%; height: 90%;" frameborder="0" src="https://mega.nz/embed/UDhUnK6Y#6JjHSOooVpK8ZnXwx2xXGsGmDDf4-rfN1vX3tcrYMeE" allowfullscreen ></iframe>
 			</article>
 
 
 		</div>
 	</main>
+
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+<button onclick="myFunction()">Click me</button>
 
 	<script>
 		<!-- var reproductor = videojs('fm-video', { -->
@@ -75,8 +85,60 @@
         console.log( "window loaded" );
 		 
 		
+		
+ var sup1 = new Superior();
+ sup1.inicia();
 		 
     });
+	
+	
+	function myFunction() {
+  <!-- var ff= $("iframe1").contents().find("body").css("display","none"); -->
+  
+  var ffDOM= $("iframe1").contents();
+  ffDOM.find(".viewer-top-bl").css("display","none");
+   alert(ffDOM.prop("class"));
+  
+  var jj= ffDOM.find(".viewer-top-bl");
+  jj.children( "i" ).css( "background-color", "blue" );
+  var hijo=jj.children( "i" );
+  jj.each(function(){
+       		    alert($(this).prop("class"));
+       		});
+			
+      alert(JSON.stringify(jj));
+	  alert(JSON.stringify(hijo));
+}
+
+
+	jQuery.noConflict();
+jQuery(document).ready(function () {
+ 
+ var sup1 = new Superior();
+ sup1.inicia();
+ 
+});
+
+function Superior () {
+ this.datos = {
+  enlace: '#bodyel',
+  destino: '#header1'
+ }
+ 
+ this.inicia = function () {
+  var that = this;
+   var cer=jQuery(that.datos.enlace).attr('id');
+   console.log(cer);
+  jQuery(that.datos.enlace).click(function () {
+  var ruta = jQuery(this).attr('id');
+  alert(ruta);
+   <!-- var ruta = jQuery(this).attr('href'); -->
+   <!-- jQuery(that.datos.destino, window.parent.document).append('<div id="insertado"><iframe src="'+ruta+'" frameborder="0"></iframe></div>'); -->
+   return false;
+  });
+ }
+}
+
     </script>
 	
 </body>
